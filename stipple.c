@@ -11,11 +11,7 @@ void display(void)
 {
 	int i;
 	glClear (GL_COLOR_BUFFER_BIT);
-	/* select white for all lines */
 	glColor3f (1.0, 1.0, 1.0);
-	/* in 1st row, 3 lines, each with a different stipple
-	 * glEnable (GL_LINE_STIPPLE);
-	 * */
 	glLineStipple (1, 0x0101); /* dotted */
 	drawOneLine (50.0, 125.0, 150.0, 125.0);
 	glLineStipple (1, 0x00FF); /* dashed */
