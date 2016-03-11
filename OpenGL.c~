@@ -1,4 +1,3 @@
-/* This is open Gl notes for future reference*/
 OpenGL is a software interface to graphics hardware. This interface consists of about 150 distinct
 commands that you use to specify the objects and operations needed to produce interactive
 three−dimensional applications
