@@ -21,13 +21,7 @@ you can perform some operations on the pixel data if you want.
 OpenGL Command Syntax:
 Suffix Data Type Typical Corresponding OpenGL Type Definition
 C−Language Type
-b
-s
-i
-f
-d
-ub
-us
+
 ui 8−bit integer
 16−bit integer
 32−bit integer
