@@ -149,5 +149,22 @@ glIndex*()
 set current color index
 
 glNormal*() 
-
 set normal vector coordinates
+
+glTexCoord*()
+set texture coordinates
+
+glEdgeFlag*()
+control drawing of edges
+
+glMaterial*()
+set material properties
+
+glArrayElement()
+extract vertex array data
+
+glEvalCoord*(), glEvalPoint*()
+generate coordinates
+
+glCallList(), glCallLists()
+execute display list(s)
