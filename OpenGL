@@ -132,3 +132,22 @@ glMatrixMode (GL_PROJECTION);
 glLoadIdentity ();
 gluOrtho2D (0.0, (GLdouble) w, 0.0, (GLdouble) h);
 }
+
+void glBegin(GLenum mode):
+Marks the beginning of a vertex−data list that describes a geometric primitive
+
+void glEnd(void);
+Marks the end of a vertex−data list
+
+glVertex*()
+set vertex coordinates
+
+glColor*()
+set current color
+
+glIndex*()
+set current color index
+
+glNormal*() 
+
+set normal vector coordinates
