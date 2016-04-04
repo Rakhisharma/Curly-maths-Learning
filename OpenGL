@@ -1,0 +1,170 @@
+***OpenGL is a software interface to graphics hardware. This interface consists of about 150 distinct
+commands that you use to specify the objects and operations needed to produce interactive
+three−dimensional applications
+
+***The major graphics operations which OpenGL performs to render an
+image on the screen. 
+1. Construct shapes from geometric primitives, thereby creating mathematical descriptions of objects.
+(OpenGL considers points, lines, polygons, images, and bitmaps to be primitives.)
+2. Arrange the objects in three−dimensional space and select the desired vantage point for viewing the
+composed scene.
+3. Calculate the color of all the objects. The color might be explicitly assigned by the application,
+determined from specified lighting conditions, obtained by pasting a texture onto the objects, or
+some combination of these three actions.
+4. Convert the mathematical description of objects and their associated color information to pixels on
+the screen. This process is called rasterization.
+During these stages, OpenGL might perform other operations, such as eliminating parts of objects that
+are hidden by other objects. In addition, after the scene is rasterized but before it’s drawn on the screen,
+you can perform some operations on the pixel data if you want.
+
+***
+OpenGL Command Syntax:
+Suffix Data Type Typical Corresponding OpenGL Type Definition
+C−Language Type
+
+ui 8−bit integer
+16−bit integer
+32−bit integer
+32−bit floating−point
+64−bit floating−point
+8−bit unsigned integer
+16−bit unsigned integer
+32−bit unsigned integer signed char
+short
+int or long
+float
+double
+unsigned char
+unsigned short
+unsigned int or unsigned
+long
+GLbyte
+GLshort
+GLint, GLsizei
+GLfloat, GLclampf
+GLdouble, GLclampd
+GLubyte, GLboolean
+GLushort
+GLuint, GLenum, GLbitfield
+
+***
+Important keyword/Functions meanings:
+-------------------------------------
+glFlush():
+---------
+Usually, the client gathers a collection of commands into a single network packet before sending it. Unfortunately, the network code
+on the client typically has no way of knowing that the graphics program is finished drawing a frame or
+scene. In the worst case, it waits forever for enough additional drawing commands to fill a packet, and
+you never see the completed drawing.
+For this reason, OpenGL provides the command glFlush(), which forces the client to send the network
+packet even though it might not be full.
+
+void glFlush(void):
+-------------------
+Forces previously issued OpenGL commands to begin execution, thus guaranteeing that they complete in finite time.
+
+glFinish()
+----------
+This command flushes the network as glFlush() does
+and then waits for notification from the graphics hardware or network indicating that the drawing is complete in the framebuffer
+
+Excessive use of glFinish() can reduce the performance of your application, especially
+if you’re running over a network, because it requires round−trip communication. If glFlush() is sufficient
+for your needs, use it instead of glFinish().
+
+void glFinish(void);
+Forces all previously issued OpenGL commands to complete. This command doesn’t return until all
+effects from previous commands are fully realized.
+
+gluOrtho2D():
+The gluOrtho2D() routine puts the origin, (0, 0), all the way in the lowest, leftmost
+square, and makes each square represent one unit. Now when you render the points, lines, and polygons
+in the rest of this chapter, they will appear on this paper in easily predictable squares. (For now, keep all
+your objects two−dimensional.)
+
+glVertex*():
+void glVertex{234}{sifd}[v](TYPEcoords);
+Specifies a vertex for use in describing a geometric object. You can supply up to four coordinates (x,
+y, z, w) for a particular vertex or as few as two (x, y) by selecting the appropriate version of the
+command. If you use a version that doesn’t explicitly specify z or w, z is understood to be 0 and w is
+understood to be 1. Calls to glVertex*() are only effective between a glBegin() and glEnd() pair.
+
+Example: Legal Uses of glVertex*()
+glVertex2s(2, 3);
+glVertex3d(0.0, 0.0, 3.1415926535898);
+glVertex4f(2.3, 1.0, −2.2, 2.0);
+GLdouble dvect[3] = {5.0, 9.0, 1992.0};
+glVertex3dv(dvect);
+
+glPolygonMode():
+void glPolygonMode(GLenum face, GLenum mode);
+Controls the drawing mode for a polygon’s front and back faces. The parameter face can be
+GL_FRONT_AND_BACK, GL_FRONT, or GL_BACK; mode can be GL_POINT, GL_LINE, or
+GL_FILL to indicate whether the polygon should be drawn as points, outlined, or filled. By default,
+both the front and back faces are drawn filled.
+For example, you can have the front faces filled and the back faces outlined with two calls to this
+routine:
+glPolygonMode(GL_FRONT, GL_FILL);
+glPolygonMode(GL_BACK, GL_LINE);
+
+glFrontFace():
+void glFrontFace(GLenum mode);
+Controls how front−facing polygons are determined. By default, mode is GL_CCW, which
+corresponds to a counterclockwise orientation of the ordered vertices of a projected polygon in
+window coordinates. If mode is GL_CW, faces with a clockwise orientation are considered
+front−facing.
+
+glCullFace():
+void glCullFace(GLenum mode);
+Indicates which polygons should be discarded (culled) before they’re converted to screen
+coordinates. The mode is either GL_FRONT, GL_BACK, or GL_FRONT_AND_BACK to indicate front−facing, back−facing, or all polygons. To take effect, culling must be enabled using glEnable()
+with GL_CULL_FACE; it can be disabled with glDisable() and the same argument.
+
+glutReshapeFunc():
+Reestablish the rectangular region that will be the new rendering canvas
+Define the coordinate system to which objects will be drawn
+
+Example:
+void reshape (int w, int h)
+{
+glViewport (0, 0, (GLsizei) w, (GLsizei) h);
+glMatrixMode (GL_PROJECTION);
+glLoadIdentity ();
+gluOrtho2D (0.0, (GLdouble) w, 0.0, (GLdouble) h);
+}
+
+void glBegin(GLenum mode):
+Marks the beginning of a vertex−data list that describes a geometric primitive
+
+void glEnd(void);
+Marks the end of a vertex−data list
+
+glVertex*()
+set vertex coordinates
+
+glColor*()
+set current color
+
+glIndex*()
+set current color index
+
+glNormal*() 
+set normal vector coordinates
+
+glTexCoord*()
+set texture coordinates
+
+glEdgeFlag*()
+control drawing of edges
+
+glMaterial*()
+set material properties
+
+glArrayElement()
+extract vertex array data
+
+glEvalCoord*(), glEvalPoint*()
+generate coordinates
+
+glCallList(), glCallLists()
+execute display list(s)
