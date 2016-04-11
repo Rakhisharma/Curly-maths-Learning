@@ -2,11 +2,11 @@
 #include<ctype.h>
 #include<stdlib.h>
 #include<string.h>
-void show_record();
-void reset_score();
-void help();
-void edit_score(float , char []);
-int main()
+int show_record();
+int reset_score();
+int help();
+int edit_score(float , char []);
+int main(void)
      {
      int countr,r,r1,count,i,n;
      float score;
@@ -31,7 +31,7 @@ int main()
      printf("\n\t\t > press H for help            ");
      printf("\n\t\t > press Q to quit             ");
      printf("\n\t\t________________________________________\n\n");
-     choice=toupper();
+     choice=toupper(0.0);
      if (choice=='V')
 	{
 	show_record();
@@ -53,7 +53,7 @@ int main()
      system("cls");
 
     printf("\n\n\n\n\n\n\n\n\n\n\t\t\tResister your name:");
-     gets(playername);
+     get(playername);
 
     system("cls");
     printf("\n ------------------  Welcome %s to C Program Quiz Game --------------------------",playername);
@@ -73,7 +73,7 @@ int main()
     printf("\n\n\t!!!!!!!!!!!!! ALL THE BEST !!!!!!!!!!!!!");
     printf("\n\n\n Press Y  to start the game!\n");
     printf("\n Press any other key to return to the main menu!");
-    if (toupper()=='Y')
+    if (toupper(0.0)=='Y')
 		{
 		    goto home;
         }
@@ -97,7 +97,7 @@ int main()
 		case 1:
 		printf("\n\nWhich of the following is a Palindrome number?");
 		printf("\n\nA.42042\t\tB.101010\n\nC.23232\t\tD.01234");
-		if (toupper()=='C')
+		if (toupper(0.0)=='C')
 			{
 			    printf("\n\nCorrect!!!");count++;
 			    
@@ -113,7 +113,7 @@ int main()
         case 2:
 		printf("\n\n\nThe country with the highest environmental performance index is...");
 		printf("\n\nA.France\t\tB.Denmark\n\nC.Switzerland\t\tD.Finland");
-		if (toupper()=='C')
+		if (toupper(0.0)=='C')
 			{printf("\n\nCorrect!!!");count++;
 			
 			break;}
@@ -125,7 +125,7 @@ int main()
         case 3:
 		printf("\n\n\nWhich animal laughs like human being?");
 		printf("\n\nA.Polar Bear\t\tB.Hyena\n\nC.Donkey\t\tD.Chimpanzee");
-		if (toupper()=='B')
+		if (toupper(0.0)=='B')
 			{printf("\n\nCorrect!!!");count++;
 			
 			break;}
@@ -137,7 +137,7 @@ int main()
         case 4:
 		printf("\n\n\nWho was awarded the youngest player award in Fifa World Cup 2006?");
 		printf("\n\nA.Wayne Rooney\t\tB.Lucas Podolski\n\nC.Lionel Messi\t\tD.Christiano Ronaldo");
-		if (toupper()=='B')
+		if (toupper(0.0)=='B')
 			{printf("\n\nCorrect!!!");count++;
 			
 			 break;}
@@ -149,7 +149,7 @@ int main()
         case 5:
         printf("\n\n\nWhich is the third highest mountain in the world?");
         printf("\n\nA.Mt. K2\t\tB.Mt. Kanchanjungha\n\nC.Mt. Makalu\t\tD.Mt. Kilimanjaro");
-        if (toupper()=='B')
+        if (toupper(0.0)=='B')
                {printf("\n\nCorrect!!!");count++;
                
                 break;}
@@ -161,7 +161,7 @@ int main()
         case 6:
 		printf("\n\n\nWhat is the group of frogs known as?");
 		printf("\n\nA.A traffic\t\tB.A toddler\n\nC.A police\t\tD.An Army");
-		if (toupper()=='D' )
+		if (toupper(0.0)=='D' )
 			{printf("\n\nCorrect!!!");count++;
 			
 			break;}
@@ -184,7 +184,7 @@ int main()
      system("cls");
      printf("\n\n\t*** CONGRATULATION %s you are eligible to play the Game ***",playername);
      printf("\n\n\n\n\t!Press any key to Start the Game!");
-     if(toupper()=='p')
+     if(toupper(0.0)=='p')
 		{goto game;}
 game:
      countr=0;
@@ -197,7 +197,7 @@ game:
 		case 1:
 		printf("\n\nWhat is the National Game of England?");
 		printf("\n\nA.Football\t\tB.Basketball\n\nC.Cricket\t\tD.Baseball");
-		if (toupper()=='C')
+		if (toupper(0.0)=='C')
 			{printf("\n\nCorrect!!!");countr++;
 			 break;
 			 }
@@ -209,7 +209,7 @@ game:
 		case 2:
 		printf("\n\n\nStudy of Earthquake is called............,");
 		printf("\n\nA.Seismology\t\tB.Cosmology\n\nC.Orology\t\tD.Etimology");
-		if (toupper()=='A')
+		if (toupper(0.0)=='A')
 			{printf("\n\nCorrect!!!");countr++;
 			 break;}
 		else
@@ -221,7 +221,7 @@ game:
         case 3:
 		printf("\n\n\nAmong the top 10 highest peaks in the world, how many lie in Nepal? ");
 		printf("\n\nA.6\t\tB.7\n\nC.8\t\tD.9");
-		if (toupper()=='C')
+		if (toupper(0.0)=='C')
 			{printf("\n\nCorrect!!!");countr++;
 			 break;}
 		else
@@ -232,7 +232,7 @@ game:
         case 4:
 		printf("\n\n\nThe Laws of Electromagnetic Induction were given by?");
 		printf("\n\nA.Faraday\t\tB.Tesla\n\nC.Maxwell\t\tD.Coulomb");
-		if (toupper()=='A')
+		if (toupper(0.0)=='A')
 			{printf("\n\nCorrect!!!");countr++;
 			 break;}
 		else
@@ -245,7 +245,7 @@ game:
         case 5:
 		printf("\n\n\nIn what unit is electric power measured?");
 		printf("\n\nA.Coulomb\t\tB.Watt\n\nC.Power\t\tD.Units");
-		if (toupper()=='B')
+		if (toupper(0.0)=='B')
 			{printf("\n\nCorrect!!!");countr++; break;}
 		else
 		       {
@@ -258,7 +258,7 @@ game:
 		case 6:
 		printf("\n\n\nWhich element is found in Vitamin B12?");
 		printf("\n\nA.Zinc\t\tB.Cobalt\n\nC.Calcium\t\tD.Iron");
-		if (toupper()=='B' )
+		if (toupper(0.0)=='B' )
 			{printf("\n\nCorrect!!!");countr++;
 			 break;}
 		else
@@ -269,7 +269,7 @@ game:
         case 7:
 		printf("\n\n\nWhat is the National Name of Japan?");
 		printf("\n\nA.Polska\t\tB.Hellas\n\nC.Drukyul\t\tD.Nippon");
-		if (toupper()=='D')
+		if (toupper(0.0)=='D')
 			{printf("\n\nCorrect!!!");countr++;
 			 break;}
 		else
@@ -280,7 +280,7 @@ game:
         case 8:
 		printf("\n\n\nHow many times a piece of paper can be folded at the most?");
 		printf("\n\nA.6\t\tB.7\n\nC.8\t\tD.Depends on the size of paper");
-		if (toupper()=='B')
+		if (toupper(0.0)=='B')
 			{printf("\n\nCorrect!!!");countr++; break;}
 		else
 		       {printf("\n\nWrong!!! The correct answer is B.7");
@@ -290,7 +290,7 @@ game:
         case 9:
 		printf("\n\n\nWhat is the capital of Denmark?");
 		printf("\n\nA.Copenhagen\t\tB.Helsinki\n\nC.Ajax\t\tD.Galatasaray");
-		if (toupper()=='A')
+		if (toupper(0.0)=='A')
 			{printf("\n\nCorrect!!!");countr++; 
 			break;}
 		else
@@ -301,7 +301,7 @@ game:
         case 10:
 		printf("\n\n\nWhich is the longest River in the world?");
 		printf("\n\nA.Nile\t\tB.Koshi\n\nC.Ganga\t\tD.Amazon");
-		if (toupper()=='A')
+		if (toupper(0.0)=='A')
 			{printf("\n\nCorrect!!!");countr++; break;}
 		else
 		       {printf("\n\nWrong!!! The correct answer is A.Nile");break;goto score;}
@@ -309,7 +309,7 @@ game:
         case 11:
 		printf("\n\n\nWhat is the color of the Black Box in aeroplanes?");
 		printf("\n\nA.White\t\tB.Black\n\nC.Orange\t\tD.Red");
-		if (toupper()=='C')
+		if (toupper(0.0)=='C')
 			{printf("\n\nCorrect!!!");countr++;
 			 break;}
 		else
@@ -319,7 +319,7 @@ game:
         case 12:
 		printf("\n\n\nWhich city is known at 'The City of Seven Hills'?");
 		printf("\n\nA.Rome\t\tB.Vactican City\n\nC.Madrid\t\tD.Berlin");
-		if (toupper()=='A')
+		if (toupper(0.0)=='A')
 			  {printf("\n\nCorrect!!!");countr++;
 			   break;}
 		else
@@ -329,7 +329,7 @@ game:
 		case 13:
 		printf("\n\n\nName the country where there no mosquitoes are found?");
 		printf("\n\nA.Japan\t\tB.Italy\n\nC.Argentina\t\tD.France");
-		if (toupper()=='D')
+		if (toupper(0.0)=='D')
 			{printf("\n\nCorrect!!!");countr++;
 			break;}
 		else
@@ -339,7 +339,7 @@ game:
         case 14:
 		printf("\n\n\nWho is the author of 'Pulpasa Cafe'?");
 		printf("\n\nA.Narayan Wagle\t\tB.Lal Gopal Subedi\n\nC.B.P. Koirala\t\tD.Khagendra Sangraula");
-		if (toupper()=='A')
+		if (toupper(0.0)=='A')
 			{printf("\n\nCorrect!!!");countr++;
 			 break;}
 		else
@@ -349,7 +349,7 @@ game:
 		case 15:
 		printf("\n\n\nWhich Blood Group is known as the Universal Recipient?");
 		printf("\n\nA.A\t\tB.AB\n\nC.B\t\tD.O");
-		if (toupper()=='B')
+		if (toupper(0.0)=='B')
 			{printf("\n\nCorrect!!!");countr++;
 			 break;}
 		else
@@ -360,7 +360,7 @@ game:
 		case 16:
 		printf("\n\n\nWhat is the unit of measurement of distance between Stars?");
 		printf("\n\nA.Light Year\t\tB.Coulomb\n\nC.Nautical Mile\t\tD.Kilometer");
-		if (toupper()=='A')
+		if (toupper(0.0)=='A')
 			{printf("\n\nCorrect!!!");countr++; 
 			break;
 			}
@@ -373,7 +373,7 @@ game:
 		case 17:
 		printf("\n\n\nThe country famous for Samba Dance is........");
 		printf("\n\nA.Brazil\t\tB.Venezuela\n\nC.Nigeria\t\tD.Bolivia");
-		if (toupper()=='A')
+		if (toupper(0.0)=='A')
 			{printf("\n\nCorrect!!!");countr++; 
 			break;}
 		else
@@ -383,7 +383,7 @@ game:
 		case 18:
 		printf("\n\n\nWind speed is measure by__________?");
 		printf("\n\nA.Lysimeter\t\tB.Air vane\n\nC.Hydrometer\t\tD.Anemometer\n\n");
-		if (toupper()=='D')
+		if (toupper(0.0)=='D')
 			{printf("\n\nCorrect!!!");countr++; 
 			break;}
 		else
@@ -393,7 +393,7 @@ game:
 		case 19:
 		printf("\n\n\nWhich city in the world is popularly known as The City of Temple?");
 		printf("\n\nA.Delhi\tB.Bhaktapur\n\nC.Kathmandu\tD.Agra\n\n");
-		if (toupper()=='C')
+		if (toupper(0.0)=='C')
 			{printf("\n\nCorrect!!!");countr++; 
 			break;}
 		else
@@ -403,7 +403,7 @@ game:
 		case 20:
 		printf("\n\n\nWhich hardware was used in the First Generation Computer?");
 		printf("\n\nA.Transistor\t\tB.Valves\n\nC.I.C\t\tD.S.S.I");
-		if (toupper()=='B')
+		if (toupper(0.0)=='B')
 			{printf("\n\nCorrect!!!");countr++; 
 			break;}
 		else
@@ -413,7 +413,7 @@ game:
 		case 21:
 		printf("\n\n\nOzone plate is being destroyed regularly because of____ ?");
 		printf("\n\nA.L.P.G\t\tB.Nitrogen\n\nC.Methane\t\tD. C.F.C");
-		if (toupper()=='D')
+		if (toupper(0.0)=='D')
 			{printf("\n\nCorrect!!!");countr++; 
 			break;}
 		else
@@ -423,7 +423,7 @@ game:
 		case 22:
 		printf("\n\n\nWho won the Women's Australian Open Tennis in 2007?");
 		printf("\n\nA.Martina Hingis\t\tB.Maria Sarapova\n\nC.Kim Clijster\t\tD.Serena Williams");
-		if (toupper()=='D')
+		if (toupper(0.0)=='D')
 			{printf("\n\nCorrect!!!");countr++; 
 			break;}
 		else
@@ -433,7 +433,7 @@ game:
 		case 23:
 		printf("\n\n\nWhich film was awarded the Best Motion Picture at Oscar in 2010?");
 		printf("\n\nA.The Secret in their Eyes\t\tB.Shutter Island\n\nC.The King's Speech\t\tD.The Reader");
-		if (toupper()=='C')
+		if (toupper(0.0)=='C')
 			{printf("\n\nCorrect!!!");countr++; 
 			break;}
 		else
@@ -463,14 +463,14 @@ game:
 	go:
 	puts("\n\n Press Y if you want to play next game");
 	puts(" Press any key if you want to go main menu");
-	if (toupper()=='Y')
+	if (toupper(0.0)=='Y')
 		goto home;
 	else
 		{
 		edit_score(score,playername);
 		goto mainhome;}}}
 
-void show_record()
+int show_record()
     {system("cls");
 	char name[20];
 	float scr;
@@ -481,9 +481,10 @@ void show_record()
 	printf("\n\n\t\t %s has secured the Highest Score %0.2f",name,scr);
 	printf("\n\n\t\t*************************************************************");
 	fclose(f);
+	return 0;
 	}
 
-void reset_score()
+int reset_score()
     {system("cls");
     float sc;
 	char nm[20];
@@ -492,9 +493,11 @@ void reset_score()
 	fscanf(f,"%s%f",&nm,&sc);
 	sc=0;
 	fprintf(f,"%s,%.2f",nm,sc);
-    fclose(f);}
+    fclose(f);
+    return 0;
+    }
 
-void help()
+int help()
 	{system("cls");
     printf("\n\n                              HELP");
     printf("\n -------------------------------------------------------------------------");
@@ -512,9 +515,11 @@ void help()
     printf("\n >> No negative marking for wrong answers");
 
 	printf("\n\n\t*********************BEST OF LUCK*********************************");
-	printf("\n\n\t*****C PROGRAM QUIZ GAME is developed by CODE WITH C TEAM********");}
+	printf("\n\n\t*****C PROGRAM QUIZ GAME is developed by CODE WITH C TEAM********");
+	return 0;
+	}
 
-void edit_score(float score, char plnm[20])
+int edit_score(float score, char plnm[20])
 	{system("cls");
 	float sc;
 	char nm[20];
@@ -526,4 +531,6 @@ void edit_score(float score, char plnm[20])
 	    fclose(f);
 	    f=fopen("score.txt","w");
 	    fprintf(f,"%s\n%.2f",plnm,sc);
-	    fclose(f);}}
+	    fclose(f);
+	    return 0;
+	    }}
